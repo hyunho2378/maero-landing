@@ -1,0 +1,360 @@
+/* assets/styles.css */
+:root {
+  --white: #FFFFFF;
+  --ink: #18161F;
+  --blue: #1F4FE0;
+  --red: #D7261E;
+
+  --radius: 16px;
+
+  --px: 1px;
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+  --touch: 44px;
+  --focus-w: 3px;
+  --focus-gap: 3px;
+  --wordmark-h: 24px;
+  --btn-min-w: 320px;
+  --stack-max: 640px;
+  --hero-art-tablet: 480px;
+  --hero-art-min: 160px;
+  --hero-art-max: 320px;
+  --hero-h-min: 640px;
+  --hero-h-max: 1000px;
+  --head-h: calc(var(--sp-16) * 2 + var(--wordmark-h));
+  --hero-art-h: clamp(var(--hero-art-min), 34svh, var(--hero-art-max));
+  --hero-art-h-vh: clamp(var(--hero-art-min), 34vh, var(--hero-art-max));
+  --hero-h: calc(clamp(var(--hero-h-min), 100svh, var(--hero-h-max)) - var(--head-h));
+  --hero-h-vh: calc(clamp(var(--hero-h-min), 100vh, var(--hero-h-max)) - var(--head-h));
+  --friend-art-h: min(55svh, 480px);
+  --friend-art-h-vh: min(55vh, 480px);
+  --friend-pipiro-h: calc(var(--friend-art-h) * 0.7);
+  --friend-pipiro-h-vh: calc(var(--friend-art-h-vh) * 0.7);
+
+  --w-70: 70%;
+  --w-80: 80%;
+  --w-88: 88%;
+  --inset: 15%;
+  --inset-wide: 7.5%;
+  --ratio-hero: 4 / 3;
+  --ratio-key: 35 / 40;
+  --ratio-card: 3 / 2;
+  --ratio-sq: 1 / 1;
+
+  --gutter: clamp(16px, calc(2.2857px + 4.2857vw), 64px);
+  --maxw: clamp(1440px, calc(1028.57px + 28.571vw), 1760px);
+  --sec: clamp(64px, min(calc(45.714px + 5.714vw), calc(86.857px + 2.857vw)), 160px);
+  --join: calc(var(--sec) * 1.5);
+  --gap-col: clamp(16px, min(calc(11.4286px + 1.4286vw), calc(21.7143px + 0.7143vw)), 40px);
+  --gap-head: clamp(12px, min(calc(9.7143px + 0.7143vw), calc(14.8571px + 0.3571vw)), 24px);
+  --gap-btn: clamp(24px, calc(21.7143px + 0.7143vw), 40px);
+  --btn-h: clamp(52px, calc(50.8571px + 0.3571vw), 60px);
+
+  --fs-h1: clamp(1.875rem, min(calc(1.2679rem + 3.0357vw), calc(3.0357rem + 1.0714vw)), 4.75rem);
+  --fs-h2: clamp(1.625rem, min(calc(1.2321rem + 1.9643vw), calc(2.3571rem + 0.7143vw)), 3.5rem);
+  --fs-h3: clamp(1.3125rem, min(calc(1.1518rem + 0.8036vw), calc(1.5536rem + 0.3571vw)), 2.125rem);
+  --fs-sub: clamp(1.0625rem, min(calc(0.9732rem + 0.4464vw), calc(1.2143rem + 0.1786vw)), 1.5rem);
+  --fs-body: clamp(1rem, calc(0.9643rem + 0.1786vw), 1.25rem);
+  --fs-name: clamp(0.9375rem, max(calc(0.9196rem + 0.0893vw), calc(0.8393rem + 0.1786vw)), 1.125rem);
+  --fs-btn: clamp(1.0625rem, min(calc(1.0268rem + 0.1786vw), calc(1.1071rem + 0.0893vw)), 1.25rem);
+  --fs-note: clamp(0.875rem, calc(0.7946rem + 0.0893vw), 0.9375rem);
+
+  --fw-h1: 800;
+  --fw-h2: 800;
+  --fw-h3: 700;
+  --fw-sub: 500;
+  --fw-body: 400;
+  --fw-name: 600;
+  --fw-btn: 700;
+  --fw-note: 400;
+  --lh-h1: 1.2;
+  --lh-h2: 1.25;
+  --lh-h3: 1.3;
+  --lh-sub: 1.5;
+  --lh-body: 1.65;
+  --lh-name: 1.5;
+  --lh-btn: 1;
+  --lh-note: 1.5;
+  --track: -0.02em;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+a { color: inherit; }
+
+h1, h2, h3 { letter-spacing: var(--track); text-wrap: balance; }
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-h1); line-height: var(--lh-h1); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-h2); line-height: var(--lh-h2); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-h3); line-height: var(--lh-h3); }
+
+.sub { font-size: var(--fs-sub); font-weight: var(--fw-sub); line-height: var(--lh-sub); }
+.note { font-size: var(--fs-note); font-weight: var(--fw-note); line-height: var(--lh-note); }
+.lead { margin-top: var(--gap-head); }
+.lead--tight { margin-top: var(--sp-4); }
+
+/* 배경 막 */
+.band { padding-block: var(--sec); }
+.band-white { background: var(--white); color: var(--ink); }
+.band-blue { background: var(--blue); color: var(--white); }
+.band-red { background: var(--red); color: var(--white); }
+.band-ink { background: var(--ink); color: var(--white); }
+
+.wrap {
+  width: min(calc(100% - 2 * var(--gutter)), var(--stack-max));
+  margin-inline: auto;
+}
+
+/* 건너뛰기 링크 */
+.skip {
+  position: absolute;
+  left: var(--sp-16);
+  top: var(--sp-16);
+  padding: var(--sp-12) var(--sp-16);
+  background: var(--ink);
+  color: var(--white);
+  font-size: var(--fs-note);
+  font-weight: var(--fw-btn);
+  text-decoration: none;
+}
+.skip:not(:focus) {
+  width: var(--px);
+  height: var(--px);
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+/* 머리글 */
+.site-head { padding-block: var(--sp-16); }
+.wordmark {
+  display: flex;
+  align-items: center;
+  height: var(--wordmark-h);
+  font-size: var(--fs-sub);
+  font-weight: var(--fw-h2);
+  line-height: var(--lh-btn);
+  letter-spacing: var(--track);
+  color: var(--ink);
+  text-decoration: none;
+}
+a.wordmark { height: auto; min-height: var(--touch); }
+
+/* 버튼 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--btn-h);
+  padding: 0 var(--sp-24);
+  border-radius: var(--radius);
+  font-size: var(--fs-btn);
+  font-weight: var(--fw-btn);
+  line-height: var(--lh-btn);
+  text-align: center;
+  text-decoration: none;
+  outline: var(--focus-w) solid transparent;
+}
+.btn--blue { background: var(--blue); color: var(--white); }
+.btn--blue:hover,
+.btn--blue:active { background: var(--ink); color: var(--white); }
+.btn--white { background: var(--white); color: var(--ink); }
+.btn--white:hover,
+.btn--white:active { background: var(--red); color: var(--white); }
+
+/* 포커스 표시 */
+:focus-visible { outline: var(--focus-w) solid var(--ink); outline-offset: var(--focus-gap); }
+.band-blue :focus-visible,
+.band-red :focus-visible,
+.band-ink :focus-visible { outline-color: var(--white); }
+.skip:focus-visible { outline-color: var(--white); outline-offset: calc(var(--focus-gap) * -1); }
+
+/* 1 첫 화면 */
+.hero { padding-block: 0; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-20); }
+.hero__art { order: -1; height: var(--hero-art-h); }
+.hero__art img { width: 100%; height: 100%; object-fit: contain; }
+.hero .sub { margin-top: var(--gap-head); }
+.hero .btn { margin-top: var(--gap-btn); }
+.hero .note { margin-top: var(--sp-8); }
+
+/* 2 두 친구 */
+.friends { padding-top: var(--sp-64); }
+.friends__grid { margin-top: var(--gap-btn); }
+.friend { display: flex; flex-direction: column; gap: var(--gap-head); }
+.friend + .friend { margin-top: var(--sp-48); }
+.friend__art { height: auto; object-fit: contain; }
+.friend--maero .friend__art { width: 100%; max-height: var(--friend-art-h); object-position: left bottom; }
+.friend--pipiro .friend__art { width: var(--w-70); max-height: var(--friend-pipiro-h); margin-left: auto; object-position: right bottom; }
+.friend__text { display: flex; flex-direction: column; gap: var(--sp-8); }
+
+/* 3, 4 물과 불 */
+.split__grid { display: flex; flex-direction: column; gap: var(--gap-btn); }
+.split__art { order: -1; width: var(--w-88); }
+.split--fire .split__art { margin-left: auto; }
+
+.disc {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio-sq);
+  border-radius: 50%;
+  background: var(--white);
+  overflow: hidden;
+}
+.disc img {
+  position: absolute;
+  inset: var(--inset);
+  width: calc(100% - 2 * var(--inset));
+  height: calc(100% - 2 * var(--inset));
+  object-fit: contain;
+}
+.disc--key { aspect-ratio: var(--ratio-key); }
+
+/* 5 엽서: 같은 3:2, 같은 폭, 2열 격자 (768 미만은 1열) */
+.pc-list { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: var(--sp-48); margin-top: var(--gap-btn); }
+.pc img { width: 100%; aspect-ratio: var(--ratio-card); object-fit: cover; border-radius: var(--radius); }
+.pc figcaption,
+.key figcaption {
+  margin-top: var(--sp-8);
+  font-size: var(--fs-name);
+  font-weight: var(--fw-name);
+  line-height: var(--lh-name);
+}
+
+/* 6 키링: 같은 35:40, 같은 크기 칸, 한 줄 격자 (360은 2열) */
+.keyring { padding-bottom: 0; }
+.key-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--gap-col);
+  row-gap: var(--sp-32);
+  align-items: start;
+  margin-top: var(--gap-btn);
+}
+.key-rest { display: contents; }
+.key { margin: 0; }
+.key figcaption { text-align: center; }
+.key--5 .disc img {
+  inset: 0 var(--inset-wide);
+  width: calc(100% - 2 * var(--inset-wide));
+  height: 100%;
+}
+
+/* 7 신청 */
+.signup { padding-top: var(--sec); padding-bottom: var(--sp-48); }
+.signup .lead { margin-top: var(--gap-head); }
+.signup .btn { margin-top: var(--gap-btn); }
+.signup .note { margin-top: var(--sp-8); }
+
+/* 8 바닥글 */
+.foot { padding-block: var(--sp-64); }
+.foot__inner { display: flex; flex-direction: column; gap: var(--sp-8); }
+.foot p,
+.foot a { font-size: var(--fs-note); font-weight: var(--fw-note); line-height: var(--lh-note); }
+.foot a {
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--touch);
+  min-height: var(--touch);
+  text-decoration: underline;
+  text-underline-offset: var(--sp-4);
+  overflow-wrap: anywhere;
+}
+
+/* 개인정보 처리방침 */
+.doc h1 { font-size: var(--fs-h2); font-weight: var(--fw-h2); line-height: var(--lh-h2); }
+.doc h1 + p { margin-top: var(--gap-head); }
+.doc h2 { margin-top: var(--sp-48); font-size: var(--fs-h3); font-weight: var(--fw-h3); line-height: var(--lh-h3); }
+.doc h2 + p { margin-top: var(--sp-8); }
+.doc a { text-decoration: underline; text-underline-offset: var(--sp-4); overflow-wrap: anywhere; }
+
+/* 태블릿 이상 (768~) */
+@media (min-width: 768px) {
+  .hero__art { height: auto; aspect-ratio: var(--ratio-hero); max-width: var(--hero-art-tablet); }
+
+  .friends__grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gap-col);
+    align-items: end;
+  }
+  .friend + .friend { margin-top: 0; }
+  .friend--maero { grid-column: 1 / 8; }
+  .friend--pipiro { grid-column: 8 / 13; }
+  .friend--pipiro .friend__art { width: 100%; margin-left: 0; object-position: left bottom; }
+
+  .pc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--gap-col); }
+
+  .key-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* 가로 모드 휴대폰 */
+@media (max-height: 499px) and (min-width: 568px) and (max-width: 1199px) {
+  .hero__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--gap-col); align-items: center; }
+  .hero__art { order: 0; grid-column: 1; grid-row: 1; height: auto; aspect-ratio: var(--ratio-hero); max-width: none; }
+  .hero__text { grid-column: 2; grid-row: 1; }
+}
+
+/* 데스크톱 */
+@media (min-width: 1200px) {
+  .wrap { width: min(calc(100% - 2 * var(--gutter)), var(--maxw)); }
+
+  .btn { width: fit-content; min-width: var(--btn-min-w); }
+
+  .hero { min-height: var(--hero-h); }
+  .hero__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-col); align-items: start; padding-top: var(--sp-24); }
+  .hero__text { grid-column: 1 / 6; grid-row: 1; }
+  .hero__art { order: 0; grid-column: 6 / 13; grid-row: 1; height: auto; max-width: none; aspect-ratio: var(--ratio-hero); }
+
+  .split__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-col); align-items: center; }
+  .split__text { grid-column: 1 / 6; grid-row: 1; }
+  .split__art { order: 0; grid-column: 6 / 13; grid-row: 1; width: var(--w-80); margin: 0; justify-self: center; }
+  .split--fire .split__text { grid-column: 8 / 13; }
+  .split--fire .split__art { grid-column: 1 / 8; }
+
+  .key-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+  .foot__inner { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: var(--sp-32); }
+}
+
+/* svh를 지원하지 않는 브라우저 */
+@supports not (height: 1svh) {
+  .hero__art { height: var(--hero-art-h-vh); }
+  .hero { min-height: var(--hero-h-vh); }
+  .friend--maero .friend__art { max-height: var(--friend-art-h-vh); }
+  .friend--pipiro .friend__art { max-height: var(--friend-pipiro-h-vh); }
+}
+
+/* 움직임 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after { transition: none !important; animation: none !important; }
+}
